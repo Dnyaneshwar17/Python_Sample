@@ -1,0 +1,7 @@
+ platfrom:
+   browser: "chrome"
+ siteconfiguration:
+    url: "https://www.surveymonkey.com"
+ login:
+   user: ""
+   password: ""
