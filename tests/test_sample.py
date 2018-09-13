@@ -3,12 +3,12 @@ import pytest
 from pages.sample_page import SampleDemo
 
 
-@pytest.mark.usefixtures("class_level")
+@pytest.mark.usefixtures("one_time_browser_setup")
 class SampleTests(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
-    def classSetup(self):
-        self.add = SampleDemo("class_level")
+    def objectSetup(self, one_time_browser_setup):
+        self.add = SampleDemo(one_time_browser_setup)
 
     @pytest.mark.run(order=1)
     def test_method(self):
@@ -26,3 +26,10 @@ class SampleTests(unittest.TestCase):
         result = self.add.string_valid("Hello","Demo")
         assert result == "DemoHello"
         print("assert result:"+result)
+        
+    @pytest.mark.run(order=4)
+    def test_method4(self):
+        result = self.add.page_valid()
+        assert result == True
+        print("assert result:" + result)
+    
