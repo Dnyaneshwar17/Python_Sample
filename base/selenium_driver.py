@@ -10,9 +10,11 @@ import os
 
 
 class SeleniumDriver():
-
+    
+    log = customLogger()
     baseURL = "https://www.surveymonkey.com/"
     browser = "Chrome"
+    
 
     def __init__(self, driver):
         self.driver = driver
