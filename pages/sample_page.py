@@ -1,20 +1,21 @@
-lass LoginPage(BasePage):
+rom base.basepage import BasePage
 
-    log = cl.customLogger(logging.DEBUG)
+
+class SampleDemo(BasePage):
+
+    # def __init__(self, value):
+    #     self.value = value
 
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
-        self.nav = NavigationPage(driver)
 
-    # Locators
-    _login_link = ""
-    _login_button = ""
-	
-	    def clickLoginLink(self):
-        self.elementClick(self._login_link, locatorType="link")
-		
-    def clickLoginButton(self):
-        self.elementClick(self._login_button, locatorType="name")
+    def sum_numbers(self, a, b):
+        result = a+b
+        return result
 
+    def string_valid(self, str1, str2):
+        result = str2+str1
+        return result
 
+   
