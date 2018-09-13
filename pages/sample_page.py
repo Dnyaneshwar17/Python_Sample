@@ -1,4 +1,4 @@
-rom base.basepage import BasePage
+from base.basepage import BasePage
 
 
 class SampleDemo(BasePage):
