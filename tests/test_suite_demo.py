@@ -1,13 +1,13 @@
 import unittest
-from tests.home.login_tests import LoginTests
-from tests.courses.register_courses_csv_data import RegisterCoursesCSVDataTests
+from tests.test_Sample import SampleTests
 
-# Get all tests from the test classes
-tc1 = unittest.TestLoader().loadTestsFromTestCase(LoginTests)
+class Test_Suite(unittest.TestCase):
 
-# Create a test suite combining all test classes
-smokeTest = unittest.TestSuite([tc1, tc2])
+    def test_main_class(self):
 
-unittest.TextTestRunner(verbosity=2).run(smokeTest)
+        self.suite = unittest.TestSuite()
+        tc1 = unittest.TestLoader().loadTestsFromTestCase(SampleTests)
 
-
+        self.suite.addTests([tc1])
+        runner = unittest.TextTestRunner()
+        runner.run(self.suite)
