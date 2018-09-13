@@ -1,5 +1,5 @@
 import unittest
-from tests.test_Sample import SampleTests
+from tests.test_sample import SampleTests
 
 class Test_Suite(unittest.TestCase):
 
